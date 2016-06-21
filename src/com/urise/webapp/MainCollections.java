@@ -5,8 +5,8 @@ import com.urise.webapp.model.Resume;
 import java.util.*;
 
 /**
- * gkislin
- * 16.06.2016
+ *
+ *
  */
 public class MainCollections {
     private static final String UUID_1 = "uuid1";

@@ -1,8 +1,8 @@
 package com.urise.webapp;
 
 /**
- * gkislin
- * 10.06.2016
+ *
+ *
  */
 public class MainString {
     public static void main(String[] args) {

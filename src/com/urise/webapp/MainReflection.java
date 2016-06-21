@@ -7,8 +7,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * gkislin
- * 12.06.2016
+ *
+ *
  */
 public class MainReflection {
 
