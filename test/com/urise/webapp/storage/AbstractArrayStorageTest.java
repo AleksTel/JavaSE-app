@@ -8,6 +8,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -35,7 +40,19 @@ public abstract class AbstractArrayStorageTest {
         RESUME_4 = new Resume(UUID_4);
     }
 
-    protected AbstractArrayStorageTest(Storage storage) {
+    protected AbstractArrayStorageTest(ArrayStorage storage) {
+        this.storage = storage;
+    }
+
+    public AbstractArrayStorageTest(ListStorage storage) {
+        this.storage = storage;
+    }
+
+    public AbstractArrayStorageTest(MapStorage storage) {
+        this.storage = storage;
+    }
+
+    public AbstractArrayStorageTest(MapUuidStorage storage) {
         this.storage = storage;
     }
 
@@ -71,12 +88,10 @@ public abstract class AbstractArrayStorageTest {
     }
 
     @Test
-    public void getAll() throws Exception {
-        Resume[] array = storage.getAll();
-        assertEquals(3, array.length);
-        assertEquals(RESUME_1, array[0]);
-        assertEquals(RESUME_2, array[1]);
-        assertEquals(RESUME_3, array[2]);
+    public void testGetAllSorted() throws Exception {
+        Collection<Resume> array = Arrays.asList(RESUME_1, RESUME_2, RESUME_3);
+        assertEquals(array, new ArrayList<Resume>(storage.getAllSorted()));
+
     }
 
     @Test
