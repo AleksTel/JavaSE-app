@@ -12,7 +12,7 @@ import static java.util.Objects.requireNonNull;
 /**
  * Array based storage for Resumes
  */
-abstract public class AbstractStorage<C> implements  C_Storage{
+abstract public class AbstractStorage<C> implements  Storage{
 
     protected abstract C getContext(String uuid);
 
